@@ -8,6 +8,7 @@ CONFIG += c++17 cmdline
 
 SOURCES += \
         fileInfo.cpp \
+        fileLogger.cpp \
         fileManager.cpp \
         main.cpp
 
@@ -18,4 +19,5 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 HEADERS += \
     fileInfo.h \
+    fileLogger.h \
     fileManager.h
