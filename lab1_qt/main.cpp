@@ -3,11 +3,14 @@
 #include "fileInfo.h"
 #include "fileManager.h"
 #include "fileLogger.h"
+#include <iostream>
+using namespace std;
+
 int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
 
-    fileInfo& instance=fileInfo::Instance();
+    fileManager& instance=fileManager::Instance();
     fileManager f;
     QObject::connect(&instanse, &fileManager::fileExist, &f, &fileLogger::printExist);
     QObject::connect(&instanse, &fileManager::fileChanged, &f, &fileLogger::printChange);

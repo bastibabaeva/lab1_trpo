@@ -4,7 +4,7 @@
 #include <QObject>
 #include <QFileInfo>
 #include <QVector>
-#include "fileInfo."
+#include "fileInfo.h"
 
 class fileManager: public QObject
 {

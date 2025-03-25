@@ -11,23 +11,23 @@ fileInfo::fileInfo()
 }
 fileInfo::fileInfo(const QString& name)
 {
-    fName=name;
-    QFileInfo file (fName);
-    fSize=file.size();
-    fExist=file.exist();
+    fileName=name;
+    QFileInfo file (fileName);
+    fileSize=file.size();
+    fileExist=file.exists();
 }
 
 //геттеры
 
 bool fileInfo::isExist()
 {
-    return fExist;
+    return fileExist;
 }
 int fileInfo::getSize()
 {
-    return fSize;
+    return fileSize;
 }
 QString fileInfo::getName()
 {
-    return fName;
+    return fileName;
 }

@@ -8,7 +8,7 @@ fileManager::fileManager()
 {
 
 }
-fileManager::addFile(QString name)
+bool fileManager::addFile(QString name)
 {
     fileInfo file(name);
     if (files.contains(file)){
@@ -20,7 +20,7 @@ fileManager::addFile(QString name)
     }
 }
 
-fileManager::delFile(QString name)
+bool fileManager::delFile(QString name)
 {
     fileInfo file(name);
     if(!(files.contains(file))) //если файл не содержится в векторе файлов, то ложь, его нет
@@ -33,7 +33,7 @@ fileManager::delFile(QString name)
     }
 }
 
-fileManager::updFile()
+void fileManager::updFile()
 {
     for(int i=0; i<files.count(); i++)
     {
@@ -56,7 +56,7 @@ fileManager::updFile()
     }
 }
 
-fileManager::fileManager()
+fileManager& fileManager::Instance()
 {
     static fileManager F;
     return F;

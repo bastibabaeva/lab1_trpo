@@ -7,10 +7,10 @@
 class fileLogger
 {
 public:
-    fileLogger(){}
+    fileLogger();
 public slots:
     printExist(QString name, qint64 size);
     printChange(QString name, qint64 size);
     printDelete(QString name);
-}
+};
 #endif // FILELOGGER_H
