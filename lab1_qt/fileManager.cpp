@@ -28,7 +28,7 @@ bool fileManager::delFile(QString name)
         return false;
     }
     else{                       //иначе удаляем файл и возвращаем истину, кот значит, что файла нет
-        files.remove(file);
+        files.removeOne(file);
         return true;
     }
 }
@@ -37,7 +37,7 @@ void fileManager::updFile()
 {
     for(int i=0; i<files.count(); i++)
     {
-        fileInfo newfile(files[i].isExist());
+        fileInfo newfile(files[i].getName());
         if((newfile.isExist()!=files[i].isExist()) && (newfile.isExist()))
         {
             files[i]=newfile;

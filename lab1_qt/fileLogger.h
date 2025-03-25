@@ -9,8 +9,8 @@ class fileLogger
 public:
     fileLogger();
 public slots:
-    printExist(QString name, qint64 size);
-    printChange(QString name, qint64 size);
-    printDelete(QString name);
+    void printExist(QString name, qint64 size);
+    void printChange(QString name, qint64 size);
+    void printDelete(QString name);
 };
 #endif // FILELOGGER_H

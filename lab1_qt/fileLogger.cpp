@@ -1,5 +1,7 @@
 #include "fileLogger.h"
 #include <iostream>
+#include <QTextStream>
+#include <QTextCodec>
 using namespace std;
 
 fileLogger::fileLogger()
@@ -8,13 +10,13 @@ fileLogger::fileLogger()
 }
 void fileLogger::printExist(QString name, qint64 size)
 {
-    cout<<"File: "<<name<<" is exist and him size: "<<size<<endl;
+    cout<<"File: "<<name.toStdString()<<" is exist and him size: "<<size<<endl;
 }
 void fileLogger::printChange(QString name, qint64 size)
 {
-    cout<<"File: "<<name<<" changed and him new size: "<<size<<endl;
+    cout<<"File: "<<name.toStdString()<<" changed and him new size: "<<size<<endl;
 }
 void fileLogger::printDelete(QString name)
 {
-    cout<<"File: "<<name<<" deleted"<<endl;
+    cout<<"File: "<<name.toStdString()<<" deleted"<<endl;
 }
