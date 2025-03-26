@@ -29,6 +29,7 @@ bool fileManager::addFile(QString name)
     fileInfo file(name);
     this->files.push_back(file);
     qDebug() <<"File added";
+    emit fileExist(file.getName(), file.getSize());
     return true;
 }
 
@@ -59,7 +60,6 @@ bool fileManager::delFile(QString name)
 void fileManager::updFile()
 {
     for(int i=0; i<files.count(); i++)
-    //for(auto i: this->files)
     {
         fileInfo newfile(files[i].getName());
         if((newfile.isExist()!= files[i].isExist()) && (newfile.isExist()))

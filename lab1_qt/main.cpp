@@ -30,15 +30,17 @@ int main(int argc, char *argv[])
     cin >> f1;
     instance.addFile(f1);
 
+    QString f3;
+    qDebug()<< "Enter name of file to check: ";
+    cin >> f3;
+    instance.updFile();
+
+    //while(true){
     QString f2;
     qDebug()  << "Enter name of file to delete: ";
     cin >> f2;
     instance.delFile(f2);
 
-
-   QString f3;
-   qDebug()<< "Enter name of file to check: ";
-   cin >> f3;
-   instance.updFile();
+    //}
     return a.exec();
 }
