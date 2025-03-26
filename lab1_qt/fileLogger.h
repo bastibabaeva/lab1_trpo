@@ -1,11 +1,11 @@
 #ifndef FILELOGGER_H
 #define FILELOGGER_H
-#include <QVector>
 #include <QString>
 #include <QObject>
 
-class fileLogger
+class fileLogger: public QObject
 {
+    Q_OBJECT
 public:
     fileLogger();
 public slots:

@@ -1,16 +1,17 @@
 #include "fileManager.h"
 #include "fileInfo.h"
+#include "fileLogger.h"
 #include <QVector>
 #include <QString>
 #include <QObject>
-
+#include <QDebug>
 fileManager::fileManager()
 {
 
 }
 bool fileManager::addFile(QString name)
 {
-    fileInfo file(name);
+    //fileInfo file(name);
    /* if (files.contains(file)){
         return false;
     }
@@ -18,22 +19,22 @@ bool fileManager::addFile(QString name)
         files.append(file);
         return true;
     }*/
-    for(auto i: this->files)
+    for (auto it = this->files.begin(); it != this->files.end(); ++it)
     {
-        if(file.getName()==i.getName())
+        if (it->getName() == name)
         {
             return false;
         }
-        else{
-            files.push_back(file);
-            return true;
-        }
     }
+    fileInfo file(name);
+    this->files.push_back(file);
+    qDebug() <<"File added";
+    return true;
 }
 
 bool fileManager::delFile(QString name)
 {
-    fileInfo file(name);
+    //fileInfo file(name);
     /*if(!(files.contains(file))) //если файл не содержится в векторе файлов, то ложь, его нет, нечего удалять
     {
         return false;
@@ -47,31 +48,33 @@ bool fileManager::delFile(QString name)
         if (it->getName() == name)
         {
             files.erase(it);  // удаляем элемент
+            qDebug() <<"File deleted";
             return true;      // успешно удалили файл
         }
     }
+    qDebug() <<"File not found";
     return false; // файл с таким именем не найден
 }
 
 void fileManager::updFile()
 {
-    //for(int i=0; i<files.count(); i++)
-    for(auto i: this->files)
+    for(int i=0; i<files.count(); i++)
+    //for(auto i: this->files)
     {
-        fileInfo newfile(i.getName());
-        if((newfile.isExist()!=i.isExist()) && (newfile.isExist()))
+        fileInfo newfile(files[i].getName());
+        if((newfile.isExist()!= files[i].isExist()) && (newfile.isExist()))
         {
-            //files[i]=newfile;
+            files[i]=newfile;
             emit fileExist(newfile.getName(), newfile.getSize());
         }
-        else if ((newfile.isExist()!=i.isExist())&& (!newfile.isExist()))
+        else if ((newfile.isExist()!= files[i].isExist())&& (!newfile.isExist()))
         {
-            //files[i]=newfile;
+            files[i]=newfile;
             emit fileDeleted(newfile.getName());
         }
-        else if ((newfile.getSize()!=i.getSize())&&(newfile.isExist()))
+        else if ((newfile.getSize()!= files[i].getSize())&&(newfile.isExist()))
         {
-            //files[i]=newfile;
+            files[i]=newfile;
             emit fileChanged(newfile.getName(), newfile.getSize());
         }
     }

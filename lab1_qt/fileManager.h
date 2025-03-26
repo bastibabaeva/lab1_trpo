@@ -5,6 +5,7 @@
 #include <QFileInfo>
 #include <QVector>
 #include "fileInfo.h"
+#include "fileLogger.h"
 
 class fileManager: public QObject
 {
