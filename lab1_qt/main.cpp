@@ -1,18 +1,12 @@
 #include <QCoreApplication>
 #include <QString>
 #include <QTextStream>
-#include <QTextCodec>
-#include <QObject>
-#include <fileInfo.h>
-#include <fileManager.h>
-#include <fileLogger.h>
-#include <iostream>
-#include <thread>
-#include <chrono>
+#include "fileInfo.h"
+#include "fileManager.h"
+#include "fileLogger.h"
+//#include <iostream>
 #include <QDebug>
-//using std::cin;
-//using std::cout;
-//using namespace std;
+#include <QTimer>
 QTextStream cin(stdin);
 
 int main(int argc, char *argv[])
@@ -25,22 +19,16 @@ int main(int argc, char *argv[])
     QObject::connect(&instance, &fileManager::fileChanged, &f, &fileLogger::printChange);
     QObject::connect(&instance, &fileManager::fileDeleted, &f, &fileLogger::printDelete);
 
-    QString f1;
+    QString f1, f2;
     qDebug() << "Enter name of file to add: ";
     cin >> f1;
     instance.addFile(f1);
-
-    QString f3;
-    qDebug()<< "Enter name of file to check: ";
-    cin >> f3;
-    instance.updFile();
-
-    //while(true){
-    QString f2;
-    qDebug()  << "Enter name of file to delete: ";
     cin >> f2;
-    instance.delFile(f2);
+    instance.addFile(f2);
 
-    //}
+    QTimer timer;
+    QObject::connect(&timer, &QTimer::timeout, &instance, &fileManager::updFile); //Когда timeout - истекает время таймера вызывается слот - Monitoring
+    timer.start(100); // Запуск таймера с интервалом 100 миллисекунд
+
     return a.exec();
 }

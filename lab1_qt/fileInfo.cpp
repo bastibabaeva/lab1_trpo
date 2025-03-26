@@ -3,11 +3,7 @@
 #include <QObject>
 #include <QString>
 
-//конструкторы
-fileInfo::fileInfo()
-{
-
-}
+//конструктор
 fileInfo::fileInfo(const QString& name)
 {
     fileName=name;

@@ -4,10 +4,7 @@
 #include <QTextCodec>
 using namespace std;
 
-fileLogger::fileLogger()
-{
 
-}
 void fileLogger::printExist(QString name, qint64 size)
 {
     cout<<"File: "<<name.toStdString()<<" is exist and him size: "<<size<<endl;

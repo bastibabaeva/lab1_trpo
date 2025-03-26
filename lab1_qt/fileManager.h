@@ -12,7 +12,7 @@ class fileManager: public QObject
     Q_OBJECT
 private:
     QVector <fileInfo> files;
-    fileManager();
+    fileManager(){}
     fileManager(const QString&name);
 public:
     bool addFile(QString name);

@@ -11,7 +11,6 @@ private:
     QString fileName;
     qint64 fileSize;
 public:
-    fileInfo();
     fileInfo(const QString& name);
     bool isExist();
     int getSize();
