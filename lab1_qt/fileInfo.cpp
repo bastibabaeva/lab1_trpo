@@ -1,4 +1,3 @@
-
 #include "fileInfo.h"
 #include <QFileInfo>
 #include <QObject>
