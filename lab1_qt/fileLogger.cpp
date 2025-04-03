@@ -1,19 +1,19 @@
 #include "fileLogger.h"
-#include <iostream>
-#include <QTextStream>
-#include <QTextCodec>
+#include <iostream> //для работы с потоками вывода на с++
+#include <QTextStream> //предоставляет удобный интерфейс для чтения и написания текста.
+#include <QTextCodec> //обеспечивает преобразования между текстовыми кодировками
 using namespace std;
 
 
-void fileLogger::printExist(QString name, qint64 size)
+void FileLogger::printExist(QString name, qint64 size)
 {
     cout<<"File: "<<name.toStdString()<<" is exist and him size: "<<size<<endl;
 }
-void fileLogger::printChange(QString name, qint64 size)
+void FileLogger::printChange(QString name, qint64 size)
 {
     cout<<"File: "<<name.toStdString()<<" changed and him new size: "<<size<<endl;
 }
-void fileLogger::printDelete(QString name)
+void FileLogger::printDelete(QString name)
 {
     cout<<"File: "<<name.toStdString()<<" deleted"<<endl;
 }

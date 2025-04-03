@@ -21,18 +21,18 @@
 QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
-struct qt_meta_stringdata_fileManager_t {
+struct qt_meta_stringdata_FileManager_t {
     QByteArrayData data[7];
     char stringdata0[57];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
-    qptrdiff(offsetof(qt_meta_stringdata_fileManager_t, stringdata0) + ofs \
+    qptrdiff(offsetof(qt_meta_stringdata_FileManager_t, stringdata0) + ofs \
         - idx * sizeof(QByteArrayData)) \
     )
-static const qt_meta_stringdata_fileManager_t qt_meta_stringdata_fileManager = {
+static const qt_meta_stringdata_FileManager_t qt_meta_stringdata_FileManager = {
     {
-QT_MOC_LITERAL(0, 0, 11), // "fileManager"
+QT_MOC_LITERAL(0, 0, 11), // "FileManager"
 QT_MOC_LITERAL(1, 12, 9), // "fileExist"
 QT_MOC_LITERAL(2, 22, 0), // ""
 QT_MOC_LITERAL(3, 23, 4), // "name"
@@ -41,12 +41,12 @@ QT_MOC_LITERAL(5, 33, 11), // "fileChanged"
 QT_MOC_LITERAL(6, 45, 11) // "fileDeleted"
 
     },
-    "fileManager\0fileExist\0\0name\0size\0"
+    "FileManager\0fileExist\0\0name\0size\0"
     "fileChanged\0fileDeleted"
 };
 #undef QT_MOC_LITERAL
 
-static const uint qt_meta_data_fileManager[] = {
+static const uint qt_meta_data_FileManager[] = {
 
  // content:
        8,       // revision
@@ -65,46 +65,43 @@ static const uint qt_meta_data_fileManager[] = {
        6,    1,   39,    2, 0x06 /* Public */,
 
  // signals: parameters
-    QMetaType::Int, QMetaType::QString, QMetaType::LongLong,    3,    4,
-    QMetaType::Int, QMetaType::QString, QMetaType::LongLong,    3,    4,
-    QMetaType::Int, QMetaType::QString,    3,
+    QMetaType::Void, QMetaType::QString, QMetaType::LongLong,    3,    4,
+    QMetaType::Void, QMetaType::QString, QMetaType::LongLong,    3,    4,
+    QMetaType::Void, QMetaType::QString,    3,
 
        0        // eod
 };
 
-void fileManager::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+void FileManager::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
     if (_c == QMetaObject::InvokeMetaMethod) {
-        auto *_t = static_cast<fileManager *>(_o);
+        auto *_t = static_cast<FileManager *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
-        case 0: { int _r = _t->fileExist((*reinterpret_cast< QString(*)>(_a[1])),(*reinterpret_cast< qint64(*)>(_a[2])));
-            if (_a[0]) *reinterpret_cast< int*>(_a[0]) = std::move(_r); }  break;
-        case 1: { int _r = _t->fileChanged((*reinterpret_cast< QString(*)>(_a[1])),(*reinterpret_cast< qint64(*)>(_a[2])));
-            if (_a[0]) *reinterpret_cast< int*>(_a[0]) = std::move(_r); }  break;
-        case 2: { int _r = _t->fileDeleted((*reinterpret_cast< QString(*)>(_a[1])));
-            if (_a[0]) *reinterpret_cast< int*>(_a[0]) = std::move(_r); }  break;
+        case 0: _t->fileExist((*reinterpret_cast< QString(*)>(_a[1])),(*reinterpret_cast< qint64(*)>(_a[2]))); break;
+        case 1: _t->fileChanged((*reinterpret_cast< QString(*)>(_a[1])),(*reinterpret_cast< qint64(*)>(_a[2]))); break;
+        case 2: _t->fileDeleted((*reinterpret_cast< QString(*)>(_a[1]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
         int *result = reinterpret_cast<int *>(_a[0]);
         {
-            using _t = int (fileManager::*)(QString , qint64 );
-            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&fileManager::fileExist)) {
+            using _t = void (FileManager::*)(QString , qint64 );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&FileManager::fileExist)) {
                 *result = 0;
                 return;
             }
         }
         {
-            using _t = int (fileManager::*)(QString , qint64 );
-            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&fileManager::fileChanged)) {
+            using _t = void (FileManager::*)(QString , qint64 );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&FileManager::fileChanged)) {
                 *result = 1;
                 return;
             }
         }
         {
-            using _t = int (fileManager::*)(QString );
-            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&fileManager::fileDeleted)) {
+            using _t = void (FileManager::*)(QString );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&FileManager::fileDeleted)) {
                 *result = 2;
                 return;
             }
@@ -112,30 +109,30 @@ void fileManager::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id,
     }
 }
 
-QT_INIT_METAOBJECT const QMetaObject fileManager::staticMetaObject = { {
+QT_INIT_METAOBJECT const QMetaObject FileManager::staticMetaObject = { {
     QMetaObject::SuperData::link<QObject::staticMetaObject>(),
-    qt_meta_stringdata_fileManager.data,
-    qt_meta_data_fileManager,
+    qt_meta_stringdata_FileManager.data,
+    qt_meta_data_FileManager,
     qt_static_metacall,
     nullptr,
     nullptr
 } };
 
 
-const QMetaObject *fileManager::metaObject() const
+const QMetaObject *FileManager::metaObject() const
 {
     return QObject::d_ptr->metaObject ? QObject::d_ptr->dynamicMetaObject() : &staticMetaObject;
 }
 
-void *fileManager::qt_metacast(const char *_clname)
+void *FileManager::qt_metacast(const char *_clname)
 {
     if (!_clname) return nullptr;
-    if (!strcmp(_clname, qt_meta_stringdata_fileManager.stringdata0))
+    if (!strcmp(_clname, qt_meta_stringdata_FileManager.stringdata0))
         return static_cast<void*>(this);
     return QObject::qt_metacast(_clname);
 }
 
-int fileManager::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+int FileManager::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
     _id = QObject::qt_metacall(_c, _id, _a);
     if (_id < 0)
@@ -153,30 +150,24 @@ int fileManager::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 }
 
 // SIGNAL 0
-int fileManager::fileExist(QString _t1, qint64 _t2)
+void FileManager::fileExist(QString _t1, qint64 _t2)
 {
-    int _t0{};
-    void *_a[] = { const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t0))), const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))), const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t2))) };
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))), const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t2))) };
     QMetaObject::activate(this, &staticMetaObject, 0, _a);
-    return _t0;
 }
 
 // SIGNAL 1
-int fileManager::fileChanged(QString _t1, qint64 _t2)
+void FileManager::fileChanged(QString _t1, qint64 _t2)
 {
-    int _t0{};
-    void *_a[] = { const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t0))), const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))), const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t2))) };
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))), const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t2))) };
     QMetaObject::activate(this, &staticMetaObject, 1, _a);
-    return _t0;
 }
 
 // SIGNAL 2
-int fileManager::fileDeleted(QString _t1)
+void FileManager::fileDeleted(QString _t1)
 {
-    int _t0{};
-    void *_a[] = { const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t0))), const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
     QMetaObject::activate(this, &staticMetaObject, 2, _a);
-    return _t0;
 }
 QT_WARNING_POP
 QT_END_MOC_NAMESPACE

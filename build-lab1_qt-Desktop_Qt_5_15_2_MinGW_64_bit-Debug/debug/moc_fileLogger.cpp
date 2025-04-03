@@ -21,18 +21,18 @@
 QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
-struct qt_meta_stringdata_fileLogger_t {
+struct qt_meta_stringdata_FileLogger_t {
     QByteArrayData data[7];
     char stringdata0[57];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
-    qptrdiff(offsetof(qt_meta_stringdata_fileLogger_t, stringdata0) + ofs \
+    qptrdiff(offsetof(qt_meta_stringdata_FileLogger_t, stringdata0) + ofs \
         - idx * sizeof(QByteArrayData)) \
     )
-static const qt_meta_stringdata_fileLogger_t qt_meta_stringdata_fileLogger = {
+static const qt_meta_stringdata_FileLogger_t qt_meta_stringdata_FileLogger = {
     {
-QT_MOC_LITERAL(0, 0, 10), // "fileLogger"
+QT_MOC_LITERAL(0, 0, 10), // "FileLogger"
 QT_MOC_LITERAL(1, 11, 10), // "printExist"
 QT_MOC_LITERAL(2, 22, 0), // ""
 QT_MOC_LITERAL(3, 23, 4), // "name"
@@ -41,12 +41,12 @@ QT_MOC_LITERAL(5, 33, 11), // "printChange"
 QT_MOC_LITERAL(6, 45, 11) // "printDelete"
 
     },
-    "fileLogger\0printExist\0\0name\0size\0"
+    "FileLogger\0printExist\0\0name\0size\0"
     "printChange\0printDelete"
 };
 #undef QT_MOC_LITERAL
 
-static const uint qt_meta_data_fileLogger[] = {
+static const uint qt_meta_data_FileLogger[] = {
 
  // content:
        8,       // revision
@@ -72,10 +72,10 @@ static const uint qt_meta_data_fileLogger[] = {
        0        // eod
 };
 
-void fileLogger::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+void FileLogger::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
     if (_c == QMetaObject::InvokeMetaMethod) {
-        auto *_t = static_cast<fileLogger *>(_o);
+        auto *_t = static_cast<FileLogger *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
         case 0: _t->printExist((*reinterpret_cast< QString(*)>(_a[1])),(*reinterpret_cast< qint64(*)>(_a[2]))); break;
@@ -86,30 +86,30 @@ void fileLogger::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
     }
 }
 
-QT_INIT_METAOBJECT const QMetaObject fileLogger::staticMetaObject = { {
+QT_INIT_METAOBJECT const QMetaObject FileLogger::staticMetaObject = { {
     QMetaObject::SuperData::link<QObject::staticMetaObject>(),
-    qt_meta_stringdata_fileLogger.data,
-    qt_meta_data_fileLogger,
+    qt_meta_stringdata_FileLogger.data,
+    qt_meta_data_FileLogger,
     qt_static_metacall,
     nullptr,
     nullptr
 } };
 
 
-const QMetaObject *fileLogger::metaObject() const
+const QMetaObject *FileLogger::metaObject() const
 {
     return QObject::d_ptr->metaObject ? QObject::d_ptr->dynamicMetaObject() : &staticMetaObject;
 }
 
-void *fileLogger::qt_metacast(const char *_clname)
+void *FileLogger::qt_metacast(const char *_clname)
 {
     if (!_clname) return nullptr;
-    if (!strcmp(_clname, qt_meta_stringdata_fileLogger.stringdata0))
+    if (!strcmp(_clname, qt_meta_stringdata_FileLogger.stringdata0))
         return static_cast<void*>(this);
     return QObject::qt_metacast(_clname);
 }
 
-int fileLogger::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+int FileLogger::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
     _id = QObject::qt_metacall(_c, _id, _a);
     if (_id < 0)

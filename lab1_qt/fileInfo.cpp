@@ -4,25 +4,25 @@
 #include <QString>
 
 //конструктор
-fileInfo::fileInfo(const QString& name)
+FileInfo::FileInfo(const QString& name)
 {
-    fileName=name;
-    QFileInfo file (fileName);
-    fileSize=file.size();
-    fileExist=file.exists();
+    fileName=name; //создаем объект fileName и приравниваем к нему объект name
+    QFileInfo file (fileName); //создаем объект file класса QFileInfo и иниц-м его name
+    fileSize=file.size(); //создаем fileSize и = значение размера получаемый с помощью метода size()
+    fileExist=file.exists(); //создаем fileExist и = значение существования получаемый с помощью метода exists()
 }
 
 //геттеры
 
-bool fileInfo::isExist()
+bool FileInfo::isExist()
 {
-    return fileExist;
+    return fileExist; //возвращаем значения член-данного fileExist(факт существ-я)
 }
-int fileInfo::getSize()
+int FileInfo::getSize()
 {
-    return fileSize;
+    return fileSize; //возвращаем значения член-данного fileSize(размер файла)
 }
-QString fileInfo::getName()
+QString FileInfo::getName()
 {
-    return fileName;
+    return fileName; //возвращаем значения член-данного fileName(имя файла)
 }

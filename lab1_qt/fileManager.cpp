@@ -6,65 +6,65 @@
 #include <QObject>
 #include <QDebug>
 
-bool fileManager::addFile(QString name)
+bool FileManager::addFile(QString name) //реализация функции
 {
 
-    for (auto it = this->files.begin(); it != this->files.end(); ++it)
+    for (auto it = this->files.begin(); it != this->files.end(); ++it) //проходимся по всем элементам вектора
     {
-        if (it->getName() == name)
+        if (it->getName() == name) //если имя файла из вектора совпадает с именем файла, поступившего в кач-ве параметра
         {
-            return false;
+            return false;   //то возвращаем ложь, файл уже есть, ничего добавлять не надо
         }
     }
-    fileInfo file(name);
-    this->files.push_back(file);
-    qDebug() <<"File added";
-    emit fileExist(file.getName(), file.getSize());
-    return true;
+    FileInfo file(name); //если файла нет, то создаем объект класса ... и иниц его ...
+    this->files.push_back(file); //добавляем этот объет в вектор с помощью метода ...
+    qDebug() <<"File added"; //выводим сообщение, о том, что файл создан с помощью qDebug()
+    emit fileExist(file.getName(), file.getSize()); //подаем сигнал, о том, что файл существует, где передаем имя и размер
+    return true; //возвращаем истину файл создали
 }
 
-bool fileManager::delFile(QString name)
+bool FileManager::delFile(QString name)//реализация функции
 {
-    fileInfo file(name);
-    for (auto it = this->files.begin(); it != this->files.end(); ++it)
+    FileInfo file(name);  //создаем объект класса ... и иниц его ...
+    for (auto it = this->files.begin(); it != this->files.end(); ++it)//проходимся по всем элементам вектора
     {
-        if (it->getName() == name)
+        if (it->getName() == name) //если имя файла из вектора совпадает с именем файла, поступившего в кач-ве параметр
         {
             files.erase(it);  // удаляем элемент
-            qDebug() <<"File deleted";
-            emit fileDeleted(file.getName());
+            emit fileDeleted(file.getName()); //подаем сигнал, о том, что файл удален, где передаем имя
             return true;      // успешно удалили файл
         }
     }
-    qDebug() <<"File not found";
     return false; // файл с таким именем не найден
 }
 
-void fileManager::updFile()
+void FileManager::updFile()
 {
     for(int i=0; i<files.count(); i++)
     {
-        fileInfo newfile(files[i].getName());
-        if((newfile.isExist()!= files[i].isExist()) && (newfile.isExist()))
+        FileInfo newfile(files[i].getName());//иниц-м именем i-ого элемента из вектора
+
+        if((newfile.isExist()!= files[i].isExist()) && (newfile.isExist())) //если файла нет в векторе и он существует
         {
-            files[i]=newfile;
-            emit fileExist(newfile.getName(), newfile.getSize());
+            files[i]=newfile; //в i-ый элемент вектора приравниваем объект newfile
+            emit fileExist(newfile.getName(), newfile.getSize()); //передаем сигнал о том, что файл существует(создан)
         }
-        else if ((newfile.isExist()!= files[i].isExist())&& (!newfile.isExist()))
+        else if ((newfile.isExist()!= files[i].isExist())&& (!newfile.isExist())) //если файла нет в векторе и он не существует
         {
-            files[i]=newfile;
-            emit fileDeleted(newfile.getName());
+            files[i]=newfile; //в i-ый элемент вектора приравниваем объект newfile
+            emit fileDeleted(newfile.getName()); //передаем сигнал о том, что файл удален
         }
         else if ((newfile.getSize()!= files[i].getSize())&&(newfile.isExist()))
         {
-            files[i]=newfile;
-            emit fileChanged(newfile.getName(), newfile.getSize());
+            files[i]=newfile; //в i-ый элемент вектора приравниваем объект newfile
+            emit fileChanged(newfile.getName(), newfile.getSize()); //передаем сигнал о том, что файл изменен
         }
+
     }
 }
 
-fileManager& fileManager::Instance()
+FileManager& FileManager::Instance() //
 {
-    static fileManager F;
-    return F;
+    static FileManager F; //создаем статический объект F класса fileManager
+    return F; //возвращаем объект
 }

@@ -7,22 +7,22 @@
 #include "fileInfo.h"
 #include "fileLogger.h"
 
-class fileManager: public QObject
+class FileManager: public QObject //наследуемя от QObject
 {
-    Q_OBJECT
+    Q_OBJECT //подключаем макрос для сигнально-слотных связей
 private:
-    QVector <fileInfo> files;
-    fileManager(){}
-    fileManager(const QString&name);
+    QVector <FileInfo> files; //создаем вектор файлов
+    FileManager(){} //создаем конструктор по умолчанию
+    FileManager(const QString&name);//создаем конструктор с параметром
 public:
-    bool addFile(QString name);
-    bool delFile(QString name);
-    void updFile();
-    static fileManager& Instance();
-signals:
-    fileExist(QString name, qint64 size);
-    fileChanged(QString name,  qint64 size);
-    fileDeleted(QString name);
+    bool addFile(QString name); //функция добавления файла в вектор
+    bool delFile(QString name); //функция удаления файла из вектор
+    void updFile(); //функция обновления  файла
+    static FileManager& Instance(); //статическая функция, которая будет использоваться для получения одиночки
+signals:     // сигналы о том, что файл создан/изменен/удален
+    void fileExist(QString name, qint64 size); //
+    void fileChanged(QString name,  qint64 size);
+    void fileDeleted(QString name);
 };
 
 #endif // FILEMANAGER_H
