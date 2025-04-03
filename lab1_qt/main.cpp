@@ -6,7 +6,7 @@
 #include "fileLogger.h"
 #include <QDebug>
 #include <QTimer>
-QTextStream cin(stdin);
+QTextStream cin(stdin); //создание экземпляра класса QTextStream и привязка его к потоку ввода (stdin)
 
 int main(int argc, char *argv[])
 {

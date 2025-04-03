@@ -2,7 +2,7 @@
 #include <QFileInfo>
 #include <QObject>
 #include <QString>
-
+#include "fileInfo.h"
 //конструктор
 FileInfo::FileInfo(const QString& name)
 {

@@ -1,7 +1,6 @@
 #include "fileLogger.h"
 #include <iostream> //для работы с потоками вывода на с++
 #include <QTextStream> //предоставляет удобный интерфейс для чтения и написания текста.
-#include <QTextCodec> //обеспечивает преобразования между текстовыми кодировками
 using namespace std;
 
 
